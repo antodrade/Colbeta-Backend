@@ -6,4 +6,7 @@ import java.util.List;
 
 public interface IUsuarioServicio {
     public List<Usuario> listarUsuarios();
+    public Usuario guardarUsuario(Usuario usuario);
 }
+
+

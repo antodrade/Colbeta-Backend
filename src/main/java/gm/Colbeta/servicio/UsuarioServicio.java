@@ -17,4 +17,11 @@ public class UsuarioServicio implements IUsuarioServicio {
     public List<Usuario> listarUsuarios() {
         return this.usuarioRepositorio.findAll();
     }
+
+    @Override
+    public Usuario guardarUsuario(Usuario usuario){
+       return this.usuarioRepositorio.save(usuario);
+    }
 }
+
+
