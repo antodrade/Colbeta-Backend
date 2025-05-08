@@ -26,6 +26,14 @@ public class Usuario {
     String name2;
     String lastname1;
     String lastname2;
+    String tipoDoc;
+    String numDoc;
+    String sexo;
+    String fechaNac;
+    String dirUsuario;
+    String telUsuario;
+    String celUsuario;
+    String email;
     String direccion;
     String EPS;
     String ciudad;
