@@ -2,11 +2,15 @@ package gm.Colbeta.servicio;
 
 import gm.Colbeta.modelo.Empresa;
 import gm.Colbeta.repositorio.EmpresaRepositorio;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class EmpresaServicio implements  IEmpresaServicio{
 
+    @Autowired
     private EmpresaRepositorio empresaRepositorio;
 
     @Override
