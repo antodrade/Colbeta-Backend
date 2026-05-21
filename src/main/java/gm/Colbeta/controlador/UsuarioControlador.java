@@ -12,7 +12,8 @@ import java.util.List;
 @RestController
 //http://localhost/hole
 @RequestMapping("hole")
-@CrossOrigin(origins = "*")
+//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:4200/")
 public class UsuarioControlador {
 
    private static final Logger logger = LoggerFactory.getLogger(UsuarioControlador.class);

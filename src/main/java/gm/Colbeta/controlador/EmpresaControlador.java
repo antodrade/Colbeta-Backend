@@ -13,7 +13,8 @@ import java.util.List;
 @RestController
 //http://localhost/hole2
 @RequestMapping("hole2")
-@CrossOrigin(origins = "*")
+//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:4200/")
 public class EmpresaControlador {
 
     private static final Logger logger = LoggerFactory.getLogger(EmpresaControlador.class);
