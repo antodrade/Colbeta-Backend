@@ -51,8 +51,6 @@ public class AuthController {
 
         Empleado nuevoEmpleado = new Empleado();
         nuevoEmpleado.setUsername(request.getUsername());
-        String passwordencriptado = passwordEncoder.encode(request.getPassword());
-        System.out.println(passwordencriptado);
         nuevoEmpleado.setPassword(request.getPassword());
         nuevoEmpleado.setNombreReal(request.getNombreReal());
         nuevoEmpleado.setRol(request.getRol());
