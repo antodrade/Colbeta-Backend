@@ -14,7 +14,7 @@ import java.util.List;
 //http://localhost/hole2
 @RequestMapping("hole2")
 //@CrossOrigin(origins = "*")
-@CrossOrigin(origins = "http://localhost:4200/")
+@CrossOrigin(origins = {"http://localhost:4200/", "http://colbeta-frontend2.onrender.com"})
 public class EmpresaControlador {
 
     private static final Logger logger = LoggerFactory.getLogger(EmpresaControlador.class);
