@@ -1,12 +1,12 @@
 package gm.Colbeta.modelo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.util.Date;
@@ -14,10 +14,13 @@ import java.util.Date;
 
 @Entity
 @Data
-@NoArgsConstructor
+//@NoArgsConstructor
 @AllArgsConstructor
 @ToString
 public class Usuario {
+
+    public Usuario(){}
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer idUser;
@@ -35,7 +38,8 @@ public class Usuario {
     String celUsuario;
     String email;
     String direccion;
-    String EPS;
+    String eps;
     String ciudad;
-    Date fechaIngreso;
+    //@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
+    String fechaIngreso;
 }
