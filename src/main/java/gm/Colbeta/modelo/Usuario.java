@@ -30,7 +30,7 @@ public class Usuario {
     String lastname1;
     String lastname2;
     String tipoDoc;
-    String numDoc;
+    String departamento;
     String sexo;
     String fechaNac;
     String dirUsuario;
