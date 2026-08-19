@@ -42,4 +42,5 @@ public class Usuario {
     String ciudad;
     //@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
     String fechaIngreso;
+    String urlFirma;
 }

@@ -19,18 +19,20 @@ public class PdfScannerController {
     @PostMapping(value = "/firmar-y-escanear", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<byte[]> firmarYEscanearPdf(
             @RequestParam("plantilla") MultipartFile plantillaFile,
-            @RequestParam("firma") MultipartFile firmaFile) {
+            @RequestParam("firma") MultipartFile firmaFile,
+            @RequestParam("firma2") MultipartFile firmaFile2) {
 
         try {
             // Validar que los archivos no vengan vacíos
-            if (plantillaFile.isEmpty() || firmaFile.isEmpty()) {
+            if (plantillaFile.isEmpty() || firmaFile.isEmpty()||firmaFile2.isEmpty()) {
                 return ResponseEntity.badRequest().build();
             }
 
             // Llamar al servicio para procesar los bytes
             byte[] pdfResultante = pdfScannerService.generarPdfEfectoEscaneado(
                     plantillaFile.getInputStream(),
-                    firmaFile.getBytes()
+                    firmaFile.getBytes(),
+                    firmaFile2.getBytes()
             );
 
             // Configurar los encabezados de respuesta para devolver un archivo PDF

@@ -51,7 +51,8 @@ public class JwtFilter extends OncePerRequestFilter {
                 }
             }
         }
-
+        System.out.println("Path: "+ request.getRequestURI());
+        System.out.println("Autenticado en SecurityContext: " + SecurityContextHolder.getContext().getAuthentication());
         chain.doFilter(request, response);
     }
 }

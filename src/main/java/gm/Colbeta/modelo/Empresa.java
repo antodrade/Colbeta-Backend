@@ -28,4 +28,5 @@ String departamento;
 String nombre;
 String direccion;
 String correo;
+String urlFirma;
 }

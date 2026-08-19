@@ -19,7 +19,7 @@ import java.util.Random;
 @Service
 public class PdfScannerService {
 
-    public byte[] generarPdfEfectoEscaneado(InputStream plantillaInputStream, byte[] firmaBytes) throws Exception {
+    public byte[] generarPdfEfectoEscaneado(InputStream plantillaInputStream, byte[] firmaBytes, byte[] firmaBytes2) throws Exception {
         // 1. Cargar el PDF base
         try (PDDocument document = Loader.loadPDF(plantillaInputStream.readAllBytes())) {
 
@@ -27,6 +27,7 @@ public class PdfScannerService {
             PDPage paginaFirma = document.getPage(1);
 
             PDImageXObject firmaImage = PDImageXObject.createFromByteArray(document, firmaBytes, "firma");
+            PDImageXObject firmaImage2 = PDImageXObject.createFromByteArray(document, firmaBytes2, "firma2");
 
             // Coordenadas y dimensiones de la firma (ajustar según tu PDF)
             float x = 330;
@@ -34,9 +35,15 @@ public class PdfScannerService {
             float ancho = 150;
             float alto = 20;
 
+            float x2 = 50;
+            float y2 = 380;
+            float ancho2 = 150;
+            float alto2 = 20;
+
             try (PDPageContentStream contentStream = new PDPageContentStream(
                     document, paginaFirma, PDPageContentStream.AppendMode.APPEND, true, true)) {
                 contentStream.drawImage(firmaImage, x, y, ancho, alto);
+                contentStream.drawImage(firmaImage2, x2, y2, ancho2, alto2);
             }
 
             // 3. Renderizar y aplicar el efecto de impreso/escaneado
