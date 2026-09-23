@@ -1,6 +1,7 @@
 package gm.Colbeta.controlador;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import gm.Colbeta.dto.RegistroEmpleadoDTO;
 import gm.Colbeta.dto.UsuarioLogin;
 import gm.Colbeta.modelo.Empleado;
 import gm.Colbeta.security.JwtUtil;
@@ -34,9 +35,9 @@ public class AuthController {
 
     @PostMapping("/login")
     public String login(@RequestBody UsuarioLogin request) {
-        System.out.println("Password enviado desde Postman encriptado: " + passwordEncoder.encode(request.getPassword()));
+     //   System.out.println("Password enviado desde Postman encriptado: " + passwordEncoder.encode(request.getPassword()));
 // Si puedes obtener el usuario de la DB aquí solo para probar:
-        System.out.println("Hash en DB: " + empleadoServicio.conseguirEmpleadoPorUsername(request.getUsername()));
+// System.out.println("Hash en DB: " + empleadoServicio.conseguirEmpleadoPorUsername(request.getUsername()));
         authManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         request.getUsername(),
@@ -48,13 +49,13 @@ public class AuthController {
     }
 
     @PostMapping ("/register")
-    public void register(@RequestBody Empleado request){
+    public void register(@RequestBody RegistroEmpleadoDTO request){
 
         Empleado nuevoEmpleado = new Empleado();
         nuevoEmpleado.setUsername(request.getUsername());
         nuevoEmpleado.setPassword(request.getPassword());
-        nuevoEmpleado.setNombreReal(request.getNombreReal());
-        nuevoEmpleado.setRol(request.getRol());
+        nuevoEmpleado.setEmail(request.getEmail());
+        nuevoEmpleado.setRol("operario");
         empleadoServicio.guardarEmpleado(nuevoEmpleado);
     }
 

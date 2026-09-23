@@ -20,6 +20,6 @@ public class Empleado {
     private String username;
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
-    private String nombreReal;
+    private String email;
     private String rol;
 }

@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.util.Date;
@@ -19,7 +20,7 @@ import java.util.Date;
 @ToString
 public class Usuario {
 
-    public Usuario(){}
+   public Usuario(){}
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,4 +44,5 @@ public class Usuario {
     //@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
     String fechaIngreso;
     String urlFirma;
+    Integer idEmpresa;
 }
