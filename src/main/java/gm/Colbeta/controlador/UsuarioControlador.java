@@ -38,11 +38,7 @@ public class UsuarioControlador {
         return this.usuarioServicio.listarUsuariosPorEmpresa(idEmpresa);
     }
 
-    @GetMapping("usuarios/{id}")
-    public void eliminarUsuarioPorId(@PathVariable Integer id){
-        logger.info("borrando usuario de id"+id);
-         this.usuarioServicio.eliminarUsuarioPorId(id);
-    }
+
 
     @GetMapping("usuarios/identificacion/{Nidentificacion}")
     public Integer extraerIdxIdentificacion(@PathVariable Integer Nidentificacion){
@@ -50,4 +46,9 @@ public class UsuarioControlador {
         return this.usuarioServicio.extraerIdxIdentificacion(Nidentificacion);
     }
 
+    @DeleteMapping("usuarios/{id}")
+    public void eliminarUsuarioPorId(@PathVariable Integer id){
+        logger.info("borrando usuario de id"+id);
+        this.usuarioServicio.eliminarUsuarioPorId(id);
+    }
 }

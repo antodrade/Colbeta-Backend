@@ -55,7 +55,7 @@ public class AuthController {
         nuevoEmpleado.setUsername(request.getUsername());
         nuevoEmpleado.setPassword(request.getPassword());
         nuevoEmpleado.setEmail(request.getEmail());
-        nuevoEmpleado.setRol("operario");
+        nuevoEmpleado.setRol("OPERARIO");
         empleadoServicio.guardarEmpleado(nuevoEmpleado);
     }
 
