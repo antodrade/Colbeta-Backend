@@ -11,7 +11,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.util.Date;
-
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 @Data
@@ -39,7 +40,10 @@ public class Usuario {
     String celUsuario;
     String email;
     String direccion;
-    String eps;
+
+    @ManyToOne
+    @JoinColumn(name = "codigo_eps")
+    private Eps eps;
     String ciudad;
     //@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
     String fechaIngreso;

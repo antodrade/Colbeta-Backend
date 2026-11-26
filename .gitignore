@@ -32,3 +32,6 @@ build/
 ### VS Code ###
 .vscode/
 .aider*
+
+# Configuración local y credenciales
+application-local.properties
